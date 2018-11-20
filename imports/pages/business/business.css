@@ -92,12 +92,16 @@ h1{
     font-size: 14px;
     margin-top: 32px;
     margin-left: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .my-shareholdings .value{
     font-size: 32px;
     margin-top: 8px;
     margin-left: 32px;
+    font-weight: bold;
+
 }
 
 .trade-section .trade{
@@ -171,4 +175,117 @@ h1{
 .trade-form span{
     margin-left: 1%;
     font-size: 32px;
+}
+
+.officers{
+    margin-top: 3%;
+    box-shadow: 0px 0px 30px #ccc;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+}
+
+.officers .officer-content{
+    display: flex;
+    margin-top: 24px;
+}
+
+.officers .officer-content .officer{
+    flex: 1;
+}
+
+.officers .officer-content .officer .picture{
+    width: 64px;
+    height: 64px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.officers .officer-content .officer p{
+    text-align: center;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.officers .title{
+    margin-top: 3%;
+    margin-left: 4%;
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.employees{
+    margin-top: 3%;
+    box-shadow: 0px 0px 30px #ccc;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section-employees{
+    flex: 1;
+    display: flex;
+    margin-top: 24px;
+}
+
+.top-section-employees .employee{
+    flex: 1;
+}
+
+.bottom-section-employees{
+    flex: 1;
+    display: flex;
+}
+
+.bottom-section-employees .employee{
+    flex: 1;
+    margin-top: 24px;
+}
+
+.employees .picture{
+    width: 64px;
+    height: 64px;
+    background: #aaa;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.employees .more-employee{
+    display: flex;
+    justify-content: center;
+}
+
+.more-employee button{
+    width: 64px;
+    height: 64px;
+    background-color:lightpink;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #FB6946;
+}
+
+.employee p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.employees .title{
+    margin-top: 3%;
+    margin-left: 4%;
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
