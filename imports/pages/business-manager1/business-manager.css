@@ -1,0 +1,155 @@
+.wrapper{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+.top-section{
+    display: flex;
+}
+
+.top-section .heading{
+    flex: 1;
+    font-size: 32px;
+}
+
+.top-section .search-box{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-section .search-box input{
+    width: 250px;
+    height: 45px;
+}
+
+.top-section .my-business{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-section .my-business button{
+    width: 250px;
+    height: 51px;
+    border: 0px;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    background: transparent;
+    box-shadow: 0px 0px 30px #ccc;
+    text-transform: uppercase;
+}
+
+.top-section .all-business{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-section .all-business button{
+    width: 250px;
+    height: 51px;
+    border: 0px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    background: rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.business-section{
+    margin-top: 54px;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-section .business-section-top{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.business-section .business-section-bottom{
+    flex: 1;
+    display: flex;
+}
+
+.business-section .company{
+    flex: 1;
+    box-shadow: 0px 0px 30px #ccc;
+}
+
+.business-section .company:nth-child(2){
+    margin: 0 40px;
+}
+
+.business-section .business-section-bottom .company{
+    margin-top: 46px;
+}
+
+.company .company-name{
+    font-size: 14px;
+    margin-top: 10%;
+    margin-left: 10%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.company .stock-price{
+    margin-left: 10%;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+.stock-price span{
+    color: black;
+    margin-left: 17px;
+}
+
+.company .stock-fluctation{
+    margin: 10% 0 10% 10%;
+    font-size: 16px;
+}
+
+.business-section-top .stock-fluctation{
+    color: #13BC50;
+}
+
+.business-section-bottom .stock-fluctation{
+    color: #FF2C45;
+}
+
+.stock-fluctation span{
+    margin-left: 16px;
+}
+
+.new-business{
+    border: 1px dashed #aaa;
+    border-radius: 6px;
+}
+
+.new-business p{
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20%;
+    font-weight: bolder;
+}
+
+.footer{
+    width: 100%;
+    min-height: 68px;
+    background-color: black;
+    margin-top: 30%;
+}
