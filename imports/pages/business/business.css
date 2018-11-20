@@ -1,0 +1,174 @@
+h1{
+    color: black;
+    text-transform: capitalize;
+}
+
+.business-wrapper{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+.business-stat-section{
+    display: flex;
+}
+
+.stat{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    border-right: 2px solid #aaa;
+}
+
+.stat .company-detail{
+    flex: 2;
+}
+
+.company-name{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.stock-change{
+    font-size: 16px;
+    color: #FF2C45;
+    font-weight: bolder;
+}
+
+.stock-change span{
+    margin-left: 16px;
+}
+
+.company-name span{
+    margin-left: 16px;
+}
+
+.stat .company-stat{
+    flex:8;
+    display: flex;
+}
+
+.company-stat .comapny-stat-name{
+    flex: 1;
+}
+
+.company-stat-name p{
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+.company-stat .company-stat-value{
+    flex: 1;
+}
+
+.company-stat-value p{
+    text-align: right;
+    font-weight: bolder;
+}
+
+.stock-graph{
+    flex: 7;
+    background-image: url("img/graph.png");
+    background-size: 100% 100%;
+}
+
+
+.trade-section{
+    display: flex;
+    margin-top: 3%;
+}
+
+.trade-section .my-shareholdings{
+    flex: 3;
+    background-image: url("img/shareholding.png");
+    background-size: 100% 100%;
+    color: white;
+    border-radius: 4px;
+}
+
+.my-shareholdings .title{
+    font-size: 14px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.my-shareholdings .value{
+    font-size: 32px;
+    margin-top: 8px;
+    margin-left: 32px;
+}
+
+.trade-section .trade{
+    flex:7;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 30px #ccc;
+}
+
+.trade .trade-heading{
+    flex: 2;
+}
+
+.trade-heading p{
+    margin-left: 2%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.trade .trade-form{
+    flex: 3;
+    display: flex;
+    line-height: -20px;
+}
+
+.trade-form .iconfrom{
+    width: 40px;
+    height: 40px;
+    background: grey;
+    border-radius: 50%;
+    margin-left: 3%;
+}
+
+.trade-form .iconto{
+    width: 40px;
+    height: 40px;
+    background: grey;
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+.trade-form p{
+    margin-left: 2%;
+    margin-top: 0px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.trade-form input{
+    height: 40px;
+    box-sizing: border-box;
+    margin-left: 2%;
+}
+
+.trade-form button{
+    width: 90px;
+    height: 40px;
+    margin-left: 3%;
+    border: 0px;
+    border-radius: 4px;
+    background-image: linear-gradient(to right, #F09819,#FF5858 );
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.trade-form span{
+    margin-left: 1%;
+    font-size: 32px;
+}
