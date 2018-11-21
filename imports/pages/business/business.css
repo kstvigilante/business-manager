@@ -258,6 +258,7 @@ h1{
     line-height: 16px;
     font-weight: bolder;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .officers .title{
@@ -266,6 +267,11 @@ h1{
     font-size: 14px;
     font-weight: bolder;
     text-transform: uppercase;
+}
+
+.officer .designation{
+    color: #aaa;
+    font-weight: bold;
 }
 
 .employees{
@@ -324,6 +330,7 @@ h1{
     border-radius: 50%;
     font-size: 18px;
     color: #FB6946;
+    font-weight: bolder;
 }
 
 .employee p{
@@ -331,6 +338,8 @@ h1{
     font-weight: bold;
     font-size: 10px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 16px;
 }
 
 .employees .title{
