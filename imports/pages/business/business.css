@@ -20,7 +20,17 @@ h1{
     display: flex;
     flex-direction: column;
     padding: 3%;
-    border-right: 2px solid #aaa;
+    position: relative;
+}
+
+.stat:after {
+    content:""; 
+    background: #D8D8D8;
+    position: absolute; 
+    bottom: 10%; 
+    left: 100%; 
+    height: 75%; 
+    width: 2px;
 }
 
 .stat .company-detail{
@@ -96,9 +106,15 @@ h1{
 }
 
 .stock-graph .timeline{
-    flex: 1;
+    flex: 2;
+    display: flex;
 }
 
+.stock-graph .timeline span{
+    flex: 1;
+    text-align: center;
+    margin-top: 6%;
+}
 
 .trade-section{
     display: flex;
@@ -159,7 +175,7 @@ h1{
     height: 40px;
     background: grey;
     border-radius: 50%;
-    margin-left: 3%;
+    margin-left: 2%;
 }
 
 .trade-form .iconto{
@@ -188,7 +204,7 @@ h1{
 .trade-form button{
     width: 90px;
     height: 40px;
-    margin-left: 3%;
+    margin-left: 2%;
     border: 0px;
     border-radius: 4px;
     background-image: linear-gradient(to right, #F09819,#FF5858 );
@@ -346,4 +362,73 @@ h1{
     font-weight: bold;
     font-size: 14px;
     letter-spacing: 0.6px;
+}
+
+.footer{
+    width: 100%;
+    color: white;
+    min-height: 68px;
+    height: 68px;
+    background: black;
+}
+
+.footer-container{
+    width: 90%;
+    max-width: 1140px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer-container .copyright{
+    flex: 1
+}
+
+.footer-container .copyright span{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.footer-container .social-links{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social-links .facebook{
+    width: 18px;
+    height: 18px;
+    background-image: url("img/Facebook.png");
+    margin-right: 3%;
+}
+
+.social-links .twitter{
+    width: 18px;
+    height: 15px;
+    background-image: url("img/Twitter.png");
+    margin-right: 3%;
+}
+
+.social-links .github{
+    width: 18px;
+    height: 18px;
+    background-image: url("img/Github.png");
+    margin-right: 3%;
+}
+
+.social-links .slack{
+    width: 18px;
+    height: 18px;
+    background-image: url("img/Slack.png");
+    margin-right: 3%;
+}
+
+.social-links .telegram{
+    width: 18px;
+    height: 15px;
+    background-image: url("img/Telegram.png");
 }
