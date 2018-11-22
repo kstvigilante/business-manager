@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Nov 22 15:02:53 2018",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Nov 22 15:41:57 2018",
     "version": "eosio::abi/1.0",
     "structs": [
         {
@@ -80,6 +80,20 @@
             ]
         },
         {
+            "name": "newbname",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "newbusinessname",
+                    "type": "string"
+                }
+            ]
+        },
+        {
             "name": "newsharec",
             "base": "",
             "fields": [
@@ -106,6 +120,11 @@
                     "type": "float64"
                 }
             ]
+        },
+        {
+            "name": "totalb",
+            "base": "",
+            "fields": []
         }
     ],
     "types": [],
@@ -131,6 +150,11 @@
             "ricardian_contract": ""
         },
         {
+            "name": "newbname",
+            "type": "newbname",
+            "ricardian_contract": ""
+        },
+        {
             "name": "newsharec",
             "type": "newsharec",
             "ricardian_contract": ""
@@ -138,6 +162,11 @@
         {
             "name": "newtshare",
             "type": "newtshare",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "totalb",
+            "type": "totalb",
             "ricardian_contract": ""
         }
     ],

@@ -28,6 +28,12 @@ class [[eosio::contract]] business : public eosio::contract{
         void newtshare(uint64_t id, double newtotalshare);
 
         [[eosio::action]]
+        void newbname(uint64_t id, std::string newbusinessname);
+
+        [[eosio::action]]
+        void totalb();
+
+        [[eosio::action]]
         void hi(name user);
 
         struct[[eosio :: table]] businessSt{
@@ -44,4 +50,5 @@ class [[eosio::contract]] business : public eosio::contract{
         businesstb _bt;
 };
 
-EOSIO_DISPATCH(business, (createb)(makepublic)(deletedata)(newsharec)(newtshare)(hi))
+EOSIO_DISPATCH(business, (createb)(makepublic)(deletedata)(newsharec)(newtshare)(newbname)
+              (totalb)(hi))

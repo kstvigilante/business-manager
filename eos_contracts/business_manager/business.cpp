@@ -55,6 +55,31 @@ void business::newtshare(uint64_t id, double newtotalshare){
     });
 }
 
+void business::newbname(uint64_t id, std::string newbusinessname){
+    auto itr = _bt.find(id);
+    eosio_assert(itr != _bt.end(), "No such business exist");
+
+    require_auth(itr->businessOwner);
+
+    _bt.modify(itr, get_self(), [&](auto& p){
+        p.businessName = newbusinessname;
+    });
+}
+
+void business::totalb(){
+    require_auth(get_self());
+
+    uint32_t counter = 0;
+    auto itr = _bt.begin();
+    while(itr != _bt.end()){
+        counter++;
+        itr++;
+    }
+
+    print("total business is ", counter);
+
+}
+
 void business::deletedata(){
     require_auth(get_self());
 
