@@ -9,19 +9,34 @@ class [[eosio::contract]] business : public eosio::contract{
         business(eosio::name receiver, eosio::name code, eosio::datastream<const char*> ds)
         : eosio::contract(receiver, code, ds), _bt(receiver, code.value)
         {
-            
+
         }
         
         [[eosio::action]]
         void createb(std::string businessName, name businessOwner);
 
+        [[eosio::action]]
+        void makepublic(uint64_t id, double marketCap, double totalShares);
+
+        [[eosio::action]]
+        void deletedata();
+
+        [[eosio::action]]
+        void newsharec(uint64_t id, double newshareprice);
+
+        [[eosio::action]]
+        void newtshare(uint64_t id, double newtotalshare);
+
+        [[eosio::action]]
+        void hi(name user);
+
         struct[[eosio :: table]] businessSt{
             uint64_t id;
             std::string businessName;
             name businessOwner;
-            uint64_t marketCap;
-            uint64_t totalShares;
-            uint64_t sharePrice;
+            double marketCap;
+            double totalShares;
+            double sharePrice;
             uint64_t primary_key() const { return id; }
         };
 
@@ -29,4 +44,4 @@ class [[eosio::contract]] business : public eosio::contract{
         businesstb _bt;
 };
 
-EOSIO_DISPATCH(business, (createb))
+EOSIO_DISPATCH(business, (createb)(makepublic)(deletedata)(newsharec)(newtshare)(hi))
