@@ -1,0 +1,69 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Nov 22 13:15:32 2018",
+    "version": "eosio::abi/1.0",
+    "structs": [
+        {
+            "name": "businessSt",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "businessName",
+                    "type": "string"
+                },
+                {
+                    "name": "businessOwner",
+                    "type": "name"
+                },
+                {
+                    "name": "marketCap",
+                    "type": "uint64"
+                },
+                {
+                    "name": "totalShares",
+                    "type": "uint64"
+                },
+                {
+                    "name": "sharePrice",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "createb",
+            "base": "",
+            "fields": [
+                {
+                    "name": "businessName",
+                    "type": "string"
+                },
+                {
+                    "name": "businessOwner",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "createb",
+            "type": "createb",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "busi",
+            "type": "businessSt",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "abi_extensions": []
+}
