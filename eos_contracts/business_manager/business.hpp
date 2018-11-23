@@ -34,6 +34,8 @@ class [[eosio::contract]] business : public eosio::contract{
         void totalb();
 
         [[eosio::action]]
+        void test();
+        [[eosio::action]]
         void hi(name user);
 
         struct[[eosio :: table]] businessSt{
@@ -51,4 +53,4 @@ class [[eosio::contract]] business : public eosio::contract{
 };
 
 EOSIO_DISPATCH(business, (createb)(makepublic)(deletedata)(newsharec)(newtshare)(newbname)
-              (totalb)(hi))
+              (totalb)(test)(hi))
