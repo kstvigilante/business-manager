@@ -97,8 +97,8 @@
     margin: 0 40px;
 }
 
-.business-section .business-section-bottom .company{
-    margin-top: 46px;
+.business-section .business-section-bottom {
+    margin-top: 3%;
 }
 
 .company .company-name{
@@ -150,4 +150,91 @@
     line-height: 20px;
     margin-top: 20%;
     font-weight: bolder;
+}
+
+@media only screen and (max-width: 600px){
+    .top-section{
+        flex-direction: column;
+    }
+
+    .top-section .heading p{
+        text-align: center;
+    }
+
+    .top-section .search-box input{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .top-section .my-business button{
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-top: 3%;
+    }
+
+    .top-section .all-business button{
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-top: 3%;
+    }
+
+    .business-section .business-section-top{
+        flex-direction: column;
+    }
+
+    .business-section .company:nth-child(2){
+        margin: 5% 0px 0px 0px;
+    }
+
+    .company{
+        margin-top: 5%;
+    }
+
+
+    .business-section .business-section-bottom{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .new-business p{
+        margin: 0;
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .top-section{
+        flex-direction: column;
+    }
+
+    .top-section .heading p{
+        text-align: center;
+    }
+
+    .top-section .search-box input{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .top-section .my-business button{
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-top: 3%;
+    }
+
+    .top-section .all-business button{
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-top: 3%;
+    }
+
+    .company .stock-price span{
+        display: block;
+        margin-left: 0%;
+    }
 }
