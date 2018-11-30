@@ -4,7 +4,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import "../../ui/layout/body/body.js";
 import "../../pages/business/business.js"
 import "../../pages/business-manager-home/business-manager-home.js"
-import "../../pages/test/test.js";
+import "../../pages/newbusiness/newbusiness.js"
 
 FlowRouter.route('/', {
     name: 'App_business_manager_home',
@@ -20,9 +20,9 @@ FlowRouter.route('/business', {
     },
 });
 
-FlowRouter.route('/test', {
-    name: 'App_test',
+FlowRouter.route('/newbusiness', {
+    name: 'App_new_business',
     action() {
-        BlazeLayout.render('App_body', { main: 'App_test' });
+        BlazeLayout.render('App_body', { main: 'App_new_business' });
     },
 });

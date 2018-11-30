@@ -1,5 +1,6 @@
 import "./business-manager-home.html";
 import "./business-manager-home.css";
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import Eos from "eosjs";
 
 eosConfig = {
@@ -41,6 +42,6 @@ Template.App_business_manager_home.onRendered(async function(){
 
 Template.App_business_manager_home.events({
     "click .new-business": function(){
-        console.log("a button was clicked");
+        FlowRouter.go("/newbusiness");
     }
-})
+});
