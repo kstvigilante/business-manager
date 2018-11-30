@@ -1,0 +1,17 @@
+<template name="App_test">
+    {{> App_header}}
+    <h1>test</h1>
+    <button>Click me!!</button>
+    <ul>
+        {{#each test22}}
+            {{> App_companyList}}
+        {{/each}}
+    </ul>
+
+    {{> App_footer}}
+</template>
+
+<template name="App_companyList">
+    <li>{{ owner}}</li>
+    <li>{{businessname}}</li>
+</template>

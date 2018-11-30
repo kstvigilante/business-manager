@@ -10,7 +10,7 @@ ACTION business::addbusiness(name owner, string businessname){
     });
 }
 
-ACTION business::makepublic(uint64_t id, double marketcap, double totalshares){
+ACTION business::makepublic(uint64_t id, double marketcap, double totalshares, string stockname){
     businesstb bt(_self, _self.value);
     auto itr = bt.find(id);
     require_auth(itr->owner);
@@ -23,6 +23,7 @@ ACTION business::makepublic(uint64_t id, double marketcap, double totalshares){
         c.marketcap = marketcap;
         c.totalshares = totalshares;
         c.shareprice = marketcap/totalshares;
+        c.stockname = stockname;
     });
 
 }

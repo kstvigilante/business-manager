@@ -91,6 +91,7 @@
 .business-section .company{
     flex: 1;
     box-shadow: 0px 0px 30px #ccc;
+    border-radius: 6px;
 }
 
 .business-section .company:nth-child(2){
@@ -110,18 +111,29 @@
     letter-spacing: 0.6px;
 }
 
-.company .stock-price{
+.stockdetails{
     margin-left: 10%;
-    font-size: 32px;
+    display: flex;
+}
+
+.stockdetails .stockname{
+    font-weight: bold;
     text-transform: uppercase;
-    color: #aaa;
+    letter-spacing: 0.6px;
+    color: grey;
+    line-height: 41px;
+    font-size: 32px;
 }
 
-.stock-price span{
+.stockdetails .stockvalue{
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
     color: black;
-    margin-left: 17px;
+    line-height: 41px;
+    font-size: 32px;
+    margin-left: 7%;
 }
-
 .company .stock-fluctation{
     margin: 10% 0 10% 10%;
     font-size: 16px;
@@ -142,6 +154,7 @@
 .new-business{
     border: 1px dashed #aaa;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .new-business p{
@@ -152,7 +165,7 @@
     font-weight: bolder;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 790px){
     .top-section{
         flex-direction: column;
     }
@@ -203,6 +216,7 @@
         padding-top: 20%;
         padding-bottom: 20%;
     }
+    
 }
 
 @media only screen and (max-width: 1250px){
@@ -235,6 +249,14 @@
 
     .company .stock-price span{
         display: block;
+        margin-left: 0%;
+    }
+
+    .stockdetails{
+        flex-direction: column;
+    }
+
+    .stockdetails .stockvalue{
         margin-left: 0%;
     }
 }

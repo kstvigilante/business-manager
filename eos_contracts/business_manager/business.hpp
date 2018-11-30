@@ -12,7 +12,7 @@ CONTRACT business : public contract{
 
         ACTION addbusiness(name owner, string businessname);
 
-        ACTION makepublic(uint64_t id, double marketcap, double totalshares);
+        ACTION makepublic(uint64_t id, double marketcap, double totalshares, string stockname);
 
         ACTION newshareprice(uint64_t id, double newshareprice);
 
@@ -24,6 +24,7 @@ CONTRACT business : public contract{
             uint64_t id;
             name owner;
             string businessname;
+            string stockname;
             double marketcap;
             double totalshares;
             double shareprice;
