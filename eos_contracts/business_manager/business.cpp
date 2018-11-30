@@ -1,94 +1,69 @@
 #include "business.hpp"
 
-void business :: createb(std::string businessName ,name businessOwner){
-    require_auth(businessOwner);
-    
-    _bt.emplace(get_self(), [&](auto& p){
-        p.id = _bt.available_primary_key();
-        p.businessName = businessName;
-        p.businessOwner = businessOwner;
-        p.marketCap = 0;
-        p.totalShares = 0;
-        p.sharePrice = 0;
+ACTION business::addbusiness(name owner, string businessname){
+    require_auth(owner);
+    businesstb bt(_self, _self.value);
+    bt.emplace(_self, [&](auto &c){
+        c.id = bt.available_primary_key();
+        c.owner = owner;
+        c.businessname = businessname;
     });
 }
 
-void business::makepublic(uint64_t id, double marketCap, double totalShares){
-    auto itr = _bt.find(id);
-    eosio_assert(itr != _bt.end(), "No such business exist");
-    eosio_assert(marketCap >0, "market cap cannot be 0 or less");
-    eosio_assert(totalShares >0, "total shares cannot be zero or less");
-    eosio_assert(itr->marketCap == 0 ,"business already public");
+ACTION business::makepublic(uint64_t id, double marketcap, double totalshares){
+    businesstb bt(_self, _self.value);
+    auto itr = bt.find(id);
+    require_auth(itr->owner);
+    eosio_assert(itr != bt.end(), "No such company exists");
+    eosio_assert(marketcap>0, "marketcap should be greater than 0");
+    eosio_assert(totalshares>0, "totalshares should be greater than 0");
+    eosio_assert(itr->marketcap == 0, "Company already public");
 
-    _bt.modify(itr, get_self(), [&](auto& p){
-        p.marketCap = marketCap;
-        p.totalShares = totalShares;
-        p.sharePrice = marketCap/totalShares;
+    bt.modify(itr, _self, [&](auto &c){
+        c.marketcap = marketcap;
+        c.totalshares = totalshares;
+        c.shareprice = marketcap/totalshares;
+    });
+
+}
+
+ACTION business::newshareprice(uint64_t id, double newshareprice){
+    businesstb bt(_self, _self.value);
+    auto itr = bt.find(id);
+    eosio_assert(itr != bt.end(), "No such business exist");
+    eosio_assert(itr->marketcap > 0 ,"business not public yet");
+    eosio_assert(newshareprice >0 , "new share price should not be less than or equal to 0");
+
+    require_auth(itr->owner);
+
+    bt.modify(itr, _self, [&](auto& c){
+        c.shareprice = newshareprice;
+        c.marketcap = newshareprice * itr->totalshares;
     });
 }
 
-void business::newsharec(uint64_t id, double newsharecost){
-    auto itr = _bt.find(id);
-    eosio_assert(itr != _bt.end(), "No such business exist");
-    eosio_assert(itr->marketCap > 0 ,"business not public yet");
-    eosio_assert(newsharecost >0 , "new share price should not be less than or equal to 0");
-
-    require_auth(itr->businessOwner);
-
-    _bt.modify(itr, get_self(), [&](auto& p){
-        p.sharePrice = newsharecost;
-        p.marketCap = newsharecost * itr->totalShares;
-    });
-}
-
-void business::newtshare(uint64_t id, double newtotalshare){
-    auto itr = _bt.find(id);
-    eosio_assert(itr != _bt.end(), "No such business exist");
-    eosio_assert(itr->marketCap > 0 ,"business not public yet");
+ACTION business::newtotalshare(uint64_t id, double newtotalshare){
+    businesstb bt(_self, _self.value);
+    auto itr = bt.find(id);
+    eosio_assert(itr != bt.end(), "No such business exist");
+    eosio_assert(itr->marketcap > 0 ,"business not public yet");
     eosio_assert(newtotalshare >0 ,"total shares cannot be 0 or less");
 
-    require_auth(itr->businessOwner);
+    require_auth(itr->owner);
 
-    _bt.modify(itr, get_self(), [&](auto& p){
-        p.totalShares = newtotalshare;
-        p.sharePrice = itr->marketCap/newtotalshare;
+    bt.modify(itr, _self, [&](auto& c){
+        c.totalshares = newtotalshare;
+        c.shareprice = itr->marketcap/newtotalshare;
     });
 }
 
-void business::newbname(uint64_t id, std::string newbusinessname){
-    auto itr = _bt.find(id);
-    eosio_assert(itr != _bt.end(), "No such business exist");
-
-    require_auth(itr->businessOwner);
-
-    _bt.modify(itr, get_self(), [&](auto& p){
-        p.businessName = newbusinessname;
-    });
-}
-
-void business::totalb(){
-    require_auth(get_self());
-
-    uint32_t counter = 0;
-    auto itr = _bt.begin();
-    while(itr != _bt.end()){
-        counter++;
-        itr++;
-    }
-
-    print("total business is ", counter);
-
-}
-
-void business::deletedata(){
-    require_auth(get_self());
-
-    auto itr = _bt.begin();
-    while(itr != _bt.end()){
-        itr = _bt.erase(itr);
+ACTION business::deleteall(){
+    require_auth(_self);
+    businesstb bt(_self, _self.value);
+    auto itr = bt.begin();
+    while(itr != bt.end()){
+        itr = bt.erase(itr);
     }
 }
 
-void business::hi(name user){
-    print("hello ", name{user});
-}
+EOSIO_DISPATCH(business, (addbusiness)(makepublic)(newshareprice)(newtotalshare)(deleteall))

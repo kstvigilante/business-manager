@@ -1,9 +1,23 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Nov 22 18:04:38 2018",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Nov 30 13:15:22 2018",
     "version": "eosio::abi/1.0",
     "structs": [
         {
-            "name": "businessSt",
+            "name": "addbusiness",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "businessname",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "businessst",
             "base": "",
             "fields": [
                 {
@@ -11,55 +25,47 @@
                     "type": "uint64"
                 },
                 {
-                    "name": "businessName",
-                    "type": "string"
-                },
-                {
-                    "name": "businessOwner",
+                    "name": "owner",
                     "type": "name"
                 },
                 {
-                    "name": "marketCap",
+                    "name": "businessname",
+                    "type": "string"
+                },
+                {
+                    "name": "marketcap",
                     "type": "float64"
                 },
                 {
-                    "name": "totalShares",
+                    "name": "totalshares",
                     "type": "float64"
                 },
                 {
-                    "name": "sharePrice",
+                    "name": "shareprice",
                     "type": "float64"
+                },
+                {
+                    "name": "sharestart",
+                    "type": "float64"
+                },
+                {
+                    "name": "shareend",
+                    "type": "float64"
+                },
+                {
+                    "name": "officers",
+                    "type": "string[]"
+                },
+                {
+                    "name": "employees",
+                    "type": "string[]"
                 }
             ]
         },
         {
-            "name": "createb",
-            "base": "",
-            "fields": [
-                {
-                    "name": "businessName",
-                    "type": "string"
-                },
-                {
-                    "name": "businessOwner",
-                    "type": "name"
-                }
-            ]
-        },
-        {
-            "name": "deletedata",
+            "name": "deleteall",
             "base": "",
             "fields": []
-        },
-        {
-            "name": "hi",
-            "base": "",
-            "fields": [
-                {
-                    "name": "user",
-                    "type": "name"
-                }
-            ]
         },
         {
             "name": "makepublic",
@@ -70,31 +76,17 @@
                     "type": "uint64"
                 },
                 {
-                    "name": "marketCap",
+                    "name": "marketcap",
                     "type": "float64"
                 },
                 {
-                    "name": "totalShares",
+                    "name": "totalshares",
                     "type": "float64"
                 }
             ]
         },
         {
-            "name": "newbname",
-            "base": "",
-            "fields": [
-                {
-                    "name": "id",
-                    "type": "uint64"
-                },
-                {
-                    "name": "newbusinessname",
-                    "type": "string"
-                }
-            ]
-        },
-        {
-            "name": "newsharec",
+            "name": "newshareprice",
             "base": "",
             "fields": [
                 {
@@ -108,7 +100,7 @@
             ]
         },
         {
-            "name": "newtshare",
+            "name": "newtotalshare",
             "base": "",
             "fields": [
                 {
@@ -120,33 +112,18 @@
                     "type": "float64"
                 }
             ]
-        },
-        {
-            "name": "test",
-            "base": "",
-            "fields": []
-        },
-        {
-            "name": "totalb",
-            "base": "",
-            "fields": []
         }
     ],
     "types": [],
     "actions": [
         {
-            "name": "createb",
-            "type": "createb",
+            "name": "addbusiness",
+            "type": "addbusiness",
             "ricardian_contract": ""
         },
         {
-            "name": "deletedata",
-            "type": "deletedata",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "hi",
-            "type": "hi",
+            "name": "deleteall",
+            "type": "deleteall",
             "ricardian_contract": ""
         },
         {
@@ -155,35 +132,20 @@
             "ricardian_contract": ""
         },
         {
-            "name": "newbname",
-            "type": "newbname",
+            "name": "newshareprice",
+            "type": "newshareprice",
             "ricardian_contract": ""
         },
         {
-            "name": "newsharec",
-            "type": "newsharec",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "newtshare",
-            "type": "newtshare",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "test",
-            "type": "test",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "totalb",
-            "type": "totalb",
+            "name": "newtotalshare",
+            "type": "newtotalshare",
             "ricardian_contract": ""
         }
     ],
     "tables": [
         {
-            "name": "busi",
-            "type": "businessSt",
+            "name": "businesstb",
+            "type": "businessst",
             "index_type": "i64",
             "key_names": [],
             "key_types": []

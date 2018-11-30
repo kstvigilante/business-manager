@@ -1,56 +1,39 @@
 #include <eosiolib/eosio.hpp>
+#include <eosiolib/asset.hpp>
 #include <eosiolib/print.hpp>
 
 using namespace eosio;
+using namespace std;
 
-class [[eosio::contract]] business : public eosio::contract{
+CONTRACT business : public contract{
+
     public:
+        using contract::contract;
 
-        business(eosio::name receiver, eosio::name code, eosio::datastream<const char*> ds)
-        : eosio::contract(receiver, code, ds), _bt(receiver, code.value)
-        {
+        ACTION addbusiness(name owner, string businessname);
 
-        }
-        
-        [[eosio::action]]
-        void createb(std::string businessName, name businessOwner);
+        ACTION makepublic(uint64_t id, double marketcap, double totalshares);
 
-        [[eosio::action]]
-        void makepublic(uint64_t id, double marketCap, double totalShares);
+        ACTION newshareprice(uint64_t id, double newshareprice);
 
-        [[eosio::action]]
-        void deletedata();
+        ACTION newtotalshare(uint64_t id, double newtotalshare);
 
-        [[eosio::action]]
-        void newsharec(uint64_t id, double newshareprice);
+        ACTION deleteall();
 
-        [[eosio::action]]
-        void newtshare(uint64_t id, double newtotalshare);
-
-        [[eosio::action]]
-        void newbname(uint64_t id, std::string newbusinessname);
-
-        [[eosio::action]]
-        void totalb();
-
-        [[eosio::action]]
-        void test();
-        [[eosio::action]]
-        void hi(name user);
-
-        struct[[eosio :: table]] businessSt{
+        TABLE businessst{
             uint64_t id;
-            std::string businessName;
-            name businessOwner;
-            double marketCap;
-            double totalShares;
-            double sharePrice;
+            name owner;
+            string businessname;
+            double marketcap;
+            double totalshares;
+            double shareprice;
+            double sharestart;
+            double shareend;
+            vector <string> officers;
+            vector <string> employees;
+
             uint64_t primary_key() const { return id; }
         };
 
-        typedef eosio::multi_index<"busi"_n, businessSt> businesstb;
-        businesstb _bt;
+        typedef multi_index<"businesstb"_n, businessst> businesstb;
 };
-
-EOSIO_DISPATCH(business, (createb)(makepublic)(deletedata)(newsharec)(newtshare)(newbname)
-              (totalb)(test)(hi))
